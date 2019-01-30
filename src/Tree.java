@@ -1,6 +1,8 @@
 import processing.core.PApplet;
 import processing.core.PImage;
 
+import java.util.ArrayList;
+
 
 public class Tree extends CreatureWorldThing {
     private int rectY = CreatureWorldApp.getApp().height/2+125;
@@ -51,7 +53,7 @@ public class Tree extends CreatureWorldThing {
     }
 
 
-    public void interact(CreatureWorldThing[] things){
+    public void interact(ArrayList<CreatureWorldThing> things){
 
     }
 

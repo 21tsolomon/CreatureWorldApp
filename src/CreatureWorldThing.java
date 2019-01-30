@@ -1,5 +1,7 @@
 //design things based on what the objects are and what the essense is
 
+import java.util.ArrayList;
+
 //looks like a method but NO PARENTHESIS, but we will put methods inside
 public class CreatureWorldThing {
     //our programs are required to have only private instance variables
@@ -60,7 +62,7 @@ public class CreatureWorldThing {
 
     }
 
-    public void interact(CreatureWorldThing[] things){
+    public void interact(ArrayList<CreatureWorldThing> things){
 
     }
 

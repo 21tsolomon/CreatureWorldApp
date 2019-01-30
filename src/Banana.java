@@ -1,6 +1,8 @@
 import processing.core.PApplet;
 import processing.core.PImage;
 
+import java.util.ArrayList;
+
 public class Banana extends CreatureWorldThing {
     private boolean bananaImage;
     public Banana(int _id){
@@ -36,8 +38,8 @@ public class Banana extends CreatureWorldThing {
         }
     }
 
-    public void interact(CreatureWorldThing[] things){
-        for (int i = 0; i < things.length; i++){
+    public void interact(ArrayList<CreatureWorldThing> things){
+        for (int i = 0; i < things.size(); i++){
             //comparing two different objects here
 
         }

@@ -1,12 +1,15 @@
 import processing.core.PApplet;
 
+import java.util.ArrayList;
+
+
 public class CreatureWorldApp extends PApplet {
     //static because you have a bunch of different instantiations and they share some common data
     //making this static as a redundancy to say that there is only one PApplet, but gives access to other tabs
     //when they need it
     private static CreatureWorldApp app;
     private int mouseCounter = 0;
-    CreatureWorldThing[] things;
+    private ArrayList<CreatureWorldThing> things;
 
     public static void main(String[] args) {
 
@@ -25,32 +28,34 @@ public class CreatureWorldApp extends PApplet {
     public void setup(){
 
         //allocating array
-        things = new CreatureWorldThing[4];
+        things = new ArrayList<CreatureWorldThing>();
         //stuffing the array
-        things[1] = new Banana(1);
-        things[0] = new Monkey(0);
-        things[2] = new Tree(2);
-        things[3] = new Toucan(3);
+        things.add(new Banana(1));
+        things.add(new Monkey(0));
+        things.add(new Tree(2));
+        things.add(new Toucan(3));
         //"1" represents the direction
 
     }
 
     public void draw(){
         background(0, 163, 19);
-        for (int i = 0; i < things.length; i++){
-            things[i].display();
+        for (int i = 0; i < things.size(); i++){
+            things.get(i).display();
+            things.get(i).behave();
+            things.get(i).interact(things);
             //getting the object at that position in the things array
             //and then you call a method on it
             //conveys the sense that these are abstractions of things that are real in the world
-            things[i].behave();
-            things[i].interact(things);
+
+
 
         }
     }
 
     public void mouseClicked(){
-        for (int i = 0; i < things.length; i++){
-            things[i].handleClick(mouseX, mouseY);
+        for (int i = 0; i < things.size(); i++){
+            things.get(i).handleClick(mouseX, mouseY);
         }
         mouseCounter++;
     }
@@ -64,6 +69,6 @@ public class CreatureWorldApp extends PApplet {
     }
 
     public CreatureWorldThing getThing(int index){
-        return things[index];
+        return things.get(index);
     }
 }

@@ -1,6 +1,8 @@
 import processing.core.PApplet;
 import processing.core.PImage;
 
+import java.util.ArrayList;
+
 public class Monkey extends CreatureWorldThing {
     private int monkeyWidth = 100;
     private int monkeyHeight = 100;
@@ -29,7 +31,7 @@ public class Monkey extends CreatureWorldThing {
         }
     }
 
-    public void interact(CreatureWorldThing[] things){
+    public void interact(ArrayList<CreatureWorldThing> things){
 
     }
 
