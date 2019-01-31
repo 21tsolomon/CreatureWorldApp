@@ -8,6 +8,10 @@ public class Monkey extends CreatureWorldThing {
     private int monkeyHeight = 100;
     private PImage img;
 
+
+
+
+
     public Monkey(int _id){
         super(_id, CreatureWorldApp.getApp().width/2, CreatureWorldApp.getApp().height/2+82, 1);
         img = CreatureWorldApp.getApp().loadImage("data/Monkey.png");
@@ -32,8 +36,27 @@ public class Monkey extends CreatureWorldThing {
     }
 
     public void interact(ArrayList<CreatureWorldThing> things){
+        if(things.size()-1 > 3) {
+            if (monkeyHeight > 200) {
+                app.kill(things.get(things.size() - 1));
+            }
+        }
+
 
     }
+        /*for (int i = 0; i < things.size(); i++) {
+            if (app.dist(things.get(i).getX(), things.get(i).getX(), getX(), getY()) < getMonkeyWidth() - 10){
+                app.kill(things.get(i));
+            }
+
+        }
+
+    }*/
+
+    public int getMonkeyWidth(){
+        return monkeyWidth;
+    }
+
 
     public void handleClick(int x, int y){
         monkeyWidth = monkeyWidth + 2;

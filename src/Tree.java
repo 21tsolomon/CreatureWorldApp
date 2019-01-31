@@ -54,7 +54,6 @@ public class Tree extends CreatureWorldThing {
 
 
     public void interact(ArrayList<CreatureWorldThing> things){
-
     }
 
 }

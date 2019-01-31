@@ -30,8 +30,8 @@ public class CreatureWorldApp extends PApplet {
         //allocating array
         things = new ArrayList<CreatureWorldThing>();
         //stuffing the array
-        things.add(new Banana(1));
-        things.add(new Monkey(0));
+        things.add(new Banana(0));
+        things.add(new Monkey(1));
         things.add(new Tree(2));
         things.add(new Toucan(3));
         //"1" represents the direction
@@ -57,8 +57,25 @@ public class CreatureWorldApp extends PApplet {
         for (int i = 0; i < things.size(); i++){
             things.get(i).handleClick(mouseX, mouseY);
         }
+
+        things.add(new Banana(0));
         mouseCounter++;
+
+        //things.add(new Monkey(1));
     }
+
+    public void keyPressed(){
+        things.add(new Banana(0));
+    }
+
+    public void kill(CreatureWorldThing thing){
+
+            things.remove(thing);
+
+
+
+    }
+
 
     public static CreatureWorldApp getApp() {
         return app;
